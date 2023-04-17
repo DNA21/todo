@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
+import { Container } from 'reactstrap';
+import { TiPlus } from 'react-icons/ti';
+import Todo from './Todo';
+
+const style = {
+
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [todos, setTodos] = useState(['Learn React', 'Grind Leetcode']);
+
+    return (
+        <>
+            <div className='page-background'>
+                <Container className='bg-light'>
+                    <h3>ToDo App</h3>
+                    <form className={style.form}>
+                        <input className={style.input} type="text" placeholder='Add Todo' />
+                        <button className={style.button}><TiPlus /></button>
+                    </form>
+                    <ul>
+                        {todos.map((todo, index) => (
+                            <Todo key={index} todo={todo} />
+                        ))}
+                    </ul>
+                    <p>You have 2 todos</p>
+                </Container>
+            </div>
+        </>
+    );
 }
 
 export default App;
