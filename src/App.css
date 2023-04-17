@@ -17,6 +17,10 @@
     background-color: lightgray;
 }
 
+.list-background-completed {
+    background-color: gray;
+}
+
 .pointer {
     cursor: pointer
 }
