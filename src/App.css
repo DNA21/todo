@@ -12,3 +12,11 @@
     min-height: 100vh;
     background-image: linear-gradient(to right, #d3f8d3, #bcf5bc, #9bf09b);
 }
+
+.list-background {
+    background-color: lightgray;
+}
+
+.pointer {
+    cursor: pointer
+}
